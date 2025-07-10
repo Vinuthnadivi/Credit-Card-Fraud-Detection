@@ -1,66 +1,54 @@
 # 💳 Credit Card Fraud Detection Using Logistic Regression
 
-This project aims to detect fraudulent credit card transactions using supervised machine learning techniques. With the help of **Logistic Regression** and data balancing strategies, it effectively identifies anomalies in transaction patterns that could indicate fraud.
+This project applies machine learning to detect fraudulent credit card transactions using a highly imbalanced dataset. It uses a **Logistic Regression** model trained on a balanced subset of data to effectively identify fraudulent activity.
 
 ---
 
-## 📌 Table of Contents
+## 🔍 Project Overview
 
-- [Project Overview](#project-overview)
-- [Dataset Description](#dataset-description)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Methodology](#methodology)
-- [Model Evaluation](#model-evaluation)
-- [How to Run](#how-to-run)
-- [Sample Output](#sample-output)
-- [Future Enhancements](#future-enhancements)
-- [Author](#author)
-- [License](#license)
+Credit card fraud is a major threat in today's digital economy. Early detection of suspicious transactions is essential to reduce financial loss and protect user accounts. This project uses logistic regression for binary classification (fraud vs. legitimate), with focus on model evaluation and handling imbalanced data.
 
 ---
 
-## 🧠 Project Overview
+## 📂 Dataset
 
-Credit card fraud is a serious issue in today's digital financial landscape. This project demonstrates the use of a **machine learning model** to detect fraudulent credit card transactions from a highly imbalanced dataset. We use **Logistic Regression** for classification after balancing the dataset to ensure effective training.
-
-The goal is to:
-- Reduce false negatives (missed fraud cases)
-- Maintain high precision and recall
-- Provide an explainable and efficient solution
-
----
-
-## 📊 Dataset Description
-
-- **Source**: [Kaggle - Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
-- **Total Records**: 284,807 transactions
-- **Fraudulent Transactions**: 492 (≈0.17%)
-- **Features**:
-  - **V1–V28**: Principal components obtained by PCA
-  - **Amount**: Transaction amount
-  - **Time**: Time since the first transaction
-  - **Class**: Target variable (0 = Legitimate, 1 = Fraudulent)
+- Source: [Kaggle - Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
+- Total Records: 284,807 transactions
+- Fraudulent Records: 492 (0.17%)
+- Features:
+  - `V1` to `V28`: PCA-transformed features
+  - `Amount`: Transaction amount
+  - `Class`: Target (0 = Legitimate, 1 = Fraudulent)
 
 ---
 
 ## 🧰 Technologies Used
 
-- Python 3.x  
-- Libraries:
-  - pandas
-  - NumPy
-  - scikit-learn
-  - Matplotlib
-  - Seaborn
+- Python  
+- NumPy, pandas  
+- scikit-learn  
+- Matplotlib, Seaborn  
 
 ---
 
-## ⚙️ Installation
+## 🧠 Model Overview
 
-Clone this repository and install the required dependencies:
+- **Model**: Logistic Regression (from scikit-learn)
+- **Handling Imbalance**:
+  - Random under-sampling of majority class
+  - Balanced dataset created by matching the number of non-fraud and fraud transactions
+- **Metrics**:
+  - Accuracy
+  - Precision
+  - Recall
+  - F1 Score
+  - Confusion Matrix
 
-```bash
-git clone https://github.com/YourUsername/credit-card-fraud-detection.git
-cd credit-card-fraud-detection
-pip install -r requirements.txt
+---
+
+## 🚀 How to Use
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/YourUsername/credit-card-fraud-detection.git
+   cd credit-card-fraud-detection
